@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 const playfair = Playfair_Display({
-  variable: "--font-playfair",
+  variable: "--font-serif",
   subsets: ["latin"],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
-  title: "Coffee Shop - Kézműves Kávézó",
-  description: "Újhullámos kávézó, helyben sült sütemények, kézműves pörkölés.",
+  title: "Fagyizó - Prémium Kézműves Fagylalt",
+  description: "A város legfrissebb gombóca. 100% természetes alapanyagok, helyi termelőktől.",
 };
 
 export default function RootLayout({
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="hu" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased bg-stone-900 text-stone-100 font-sans`}
+        className={`${outfit.variable} ${playfair.variable} antialiased font-sans bg-[#FFFDF8] text-stone-900`}
       >
         <LenisProvider>
           {children}
