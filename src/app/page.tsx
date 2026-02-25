@@ -173,28 +173,29 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { title: "Sós Karamell", color: "bg-[#FCE6C3]", text: "text-[#B58452]", desc: "Lágy, krémes karamell a tengeri só roppanós fűszerességével.", img: "bg-[url('https://images.unsplash.com/photo-1557142046-c704a28073fc?auto=format&fit=crop&q=80&w=800')]" },
-              { title: "Pisztácia", color: "bg-mint-200", text: "text-mint-500", desc: "100% szicíliai pisztácia, pörkölt darabkákkal a tökéletes textúráért.", img: "bg-[url('https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800')]" },
-              { title: "Friss Eper", color: "bg-pink-100", text: "text-pink-500", desc: "Helyi termelőktől származó, napérlelte eperből készült hűsítő sorbet.", img: "bg-[url('https://images.unsplash.com/photo-1570197781417-0a5f8b2d41a3?auto=format&fit=crop&q=80&w=800')]" }
+              { title: "Karamell & Tengeri Só", color: "bg-vanilla-400", text: "text-vanilla-900", desc: "Lágy, krémes karamell a tengeri só roppanós fűszerességével.", img: "bg-[url('/hero.png')]" },
+              { title: "Szicíliai Pisztácia", color: "bg-mint-200", text: "text-mint-500", desc: "100% szicíliai pisztácia, pörkölt darabkákkal a tökéletes textúráért.", img: "bg-[url('https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&q=80&w=800')]" },
+              { title: "Zamatos Eper", color: "bg-pink-200", text: "text-pink-500", desc: "Helyi termelőktől származó, napérlelte eperből készült hűsítő sorbet.", img: "bg-[url('/splash.png')]" }
             ].map((flavor, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
-                whileHover={{ y: -15, scale: 1.02 }}
-                className="relative rounded-[2.5rem] p-6 h-[400px] flex flex-col justify-end overflow-hidden group shadow-2xl shadow-vanilla-900/5 cursor-pointer"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                whileHover={{ y: -10, scale: 1.03 }}
+                className="relative rounded-[2.5rem] p-8 h-[450px] flex flex-col justify-end overflow-hidden group shadow-2xl shadow-pink-500/5 cursor-pointer border border-vanilla-50/20"
               >
                 {/* Background Image & Overlay */}
-                <div className={`absolute inset-0 ${flavor.img} bg-cover bg-center transition-transform duration-700 group-hover:scale-110`}></div>
-                <div className={`absolute inset-0 ${flavor.color} opacity-90 group-hover:opacity-60 transition-opacity duration-500 mix-blend-multiply`}></div>
+                <div className={`absolute inset-0 ${flavor.img} bg-cover bg-center transition-transform duration-1000 group-hover:scale-110`}></div>
+                <div className={`absolute inset-0 ${flavor.color} opacity-80 group-hover:opacity-40 transition-opacity duration-700 mix-blend-multiply`}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-vanilla-900/60 via-transparent to-transparent opacity-60"></div>
 
                 {/* Content */}
-                <div className="relative z-10 glass-panel p-6 rounded-3xl group-hover:bg-white/80 transition-colors">
-                  <h3 className="font-serif text-3xl font-bold mb-2 text-vanilla-900">{flavor.title}</h3>
+                <div className="relative z-10 glass-panel p-6 rounded-3xl group-hover:bg-white/95 transition-all transform group-hover:-translate-y-2 duration-500">
+                  <h3 className="font-serif text-3xl font-bold mb-3 text-vanilla-900">{flavor.title}</h3>
                   <p className="text-vanilla-900/80 font-medium text-sm leading-relaxed">{flavor.desc}</p>
                 </div>
               </motion.div>
@@ -277,21 +278,21 @@ export default function Home() {
         {/* Masonry Grid Setup using Tailwind */}
         <div className="max-w-7xl mx-auto columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
           {[
-            { img: "https://images.unsplash.com/photo-1557142046-c704a28073fc?auto=format&fit=crop&q=80&w=600", h: "h-[300px]" },
+            { img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&q=80&w=600", h: "h-[300px]" },
             { img: "/parlor.png", h: "h-[450px]" },
-            { img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&q=80&w=600", h: "h-[250px]" },
-            { img: "https://images.unsplash.com/photo-1549395156-e0c1fe6fc7a5?auto=format&fit=crop&q=80&w=600", h: "h-[400px]" },
-            { img: "https://images.unsplash.com/photo-1563805042-7684c8e9e533?auto=format&fit=crop&q=80&w=600", h: "h-[300px]" },
-            { img: "https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?auto=format&fit=crop&q=80&w=600", h: "h-[350px]" },
+            { img: "https://images.unsplash.com/photo-1549395156-e0c1fe6fc7a5?auto=format&fit=crop&q=80&w=600", h: "h-[250px]" },
+            { img: "/splash.png", h: "h-[400px]" },
+            { img: "https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?auto=format&fit=crop&q=80&w=600", h: "h-[320px]" },
+            { img: "/hero.png", h: "h-[350px]" },
           ].map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative w-full rounded-[2rem] overflow-hidden group break-inside-avoid ${item.h} shadow-xl`}
+              className={`relative w-full rounded-[2rem] overflow-hidden group break-inside-avoid ${item.h} shadow-lg hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 ring-1 ring-vanilla-900/5`}
             >
-              <img src={item.img} alt="Instagram poszt" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-vanilla-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                <Instagram className="w-10 h-10 text-white" />
+              <img src={item.img} alt="Instagram poszt" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-vanilla-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-md">
+                <Instagram className="w-12 h-12 text-white" />
               </div>
             </motion.div>
           ))}
