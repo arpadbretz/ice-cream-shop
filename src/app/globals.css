@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  
+  --color-stone-900: #2C1B18; /* Deep brown */
+  --color-stone-100: #F5F5DC; /* Cream */
+  --color-amber-500: #D4A373; /* Sand / Gold */
+  --color-amber-600: #B58452; /* Darker Gold for hover effects */
+}
+
+/* Custom Utilities if needed */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-stone-900);
+  color: var(--color-stone-100);
+}
